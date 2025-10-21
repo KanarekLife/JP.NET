@@ -1,0 +1,212 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Lab04.TextWidget/1.0.0": {
+        "dependencies": {
+          "Lab04.Contracts": "1.0.0",
+          "System.Composition": "9.0.9"
+        },
+        "runtime": {
+          "Lab04.TextWidget.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.1": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.324.11423"
+          }
+        }
+      },
+      "Prism.Container.Abstractions/9.0.106": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/Prism.Container.Abstractions.dll": {
+            "assemblyVersion": "9.0.106.9543",
+            "fileVersion": "9.0.106.9543"
+          }
+        }
+      },
+      "Prism.Core/9.0.537": {
+        "dependencies": {
+          "Prism.Container.Abstractions": "9.0.106",
+          "Prism.Events": "9.0.537"
+        },
+        "runtime": {
+          "lib/net6.0/Prism.dll": {
+            "assemblyVersion": "9.0.537.60525",
+            "fileVersion": "9.0.537.60525"
+          }
+        }
+      },
+      "Prism.Events/9.0.537": {
+        "runtime": {
+          "lib/net6.0/Prism.Events.dll": {
+            "assemblyVersion": "9.0.537.60525",
+            "fileVersion": "9.0.537.60525"
+          }
+        }
+      },
+      "System.Composition/9.0.9": {
+        "dependencies": {
+          "System.Composition.AttributedModel": "9.0.9",
+          "System.Composition.Convention": "9.0.9",
+          "System.Composition.Hosting": "9.0.9",
+          "System.Composition.Runtime": "9.0.9",
+          "System.Composition.TypedParts": "9.0.9"
+        }
+      },
+      "System.Composition.AttributedModel/9.0.9": {
+        "runtime": {
+          "lib/net9.0/System.Composition.AttributedModel.dll": {
+            "assemblyVersion": "9.0.0.9",
+            "fileVersion": "9.0.925.41916"
+          }
+        }
+      },
+      "System.Composition.Convention/9.0.9": {
+        "dependencies": {
+          "System.Composition.AttributedModel": "9.0.9"
+        },
+        "runtime": {
+          "lib/net9.0/System.Composition.Convention.dll": {
+            "assemblyVersion": "9.0.0.9",
+            "fileVersion": "9.0.925.41916"
+          }
+        }
+      },
+      "System.Composition.Hosting/9.0.9": {
+        "dependencies": {
+          "System.Composition.Runtime": "9.0.9"
+        },
+        "runtime": {
+          "lib/net9.0/System.Composition.Hosting.dll": {
+            "assemblyVersion": "9.0.0.9",
+            "fileVersion": "9.0.925.41916"
+          }
+        }
+      },
+      "System.Composition.Runtime/9.0.9": {
+        "runtime": {
+          "lib/net9.0/System.Composition.Runtime.dll": {
+            "assemblyVersion": "9.0.0.9",
+            "fileVersion": "9.0.925.41916"
+          }
+        }
+      },
+      "System.Composition.TypedParts/9.0.9": {
+        "dependencies": {
+          "System.Composition.AttributedModel": "9.0.9",
+          "System.Composition.Hosting": "9.0.9",
+          "System.Composition.Runtime": "9.0.9"
+        },
+        "runtime": {
+          "lib/net9.0/System.Composition.TypedParts.dll": {
+            "assemblyVersion": "9.0.0.9",
+            "fileVersion": "9.0.925.41916"
+          }
+        }
+      },
+      "Lab04.Contracts/1.0.0": {
+        "dependencies": {
+          "Prism.Core": "9.0.537"
+        },
+        "runtime": {
+          "Lab04.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lab04.TextWidget/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fGLiCRLMYd00JYpClraLjJTNKLmMJPnqxMaiRzEBIIvevlzxz33mXy39Lkd48hu1G+N21S7QpaO5ZzKsI6FRuA==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.1",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512"
+    },
+    "Prism.Container.Abstractions/9.0.106": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QNOERNOqsxvAa8pbWjqFB872DkvYK/cVRrcFO5vJYgWTIKBd8xfaI/jaZ0qeXLYVDz0nrvgJTZVVnip6+68dCw==",
+      "path": "prism.container.abstractions/9.0.106",
+      "hashPath": "prism.container.abstractions.9.0.106.nupkg.sha512"
+    },
+    "Prism.Core/9.0.537": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D7mEqPKLVNrD0g2WHCpC/MOKwn8h7X1liCWyjqjL7NCuxgwuhVLTG85E/ZPBkISrXdwvOQZ+bSY31bvP79FQlg==",
+      "path": "prism.core/9.0.537",
+      "hashPath": "prism.core.9.0.537.nupkg.sha512"
+    },
+    "Prism.Events/9.0.537": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Pzp5MGUuhAyKXZUbHVYNWLGF/eA3sScqDN6VrzbWlKj85R0IS0q+JXe99umynso2xhXAe+1jrQCCkgqmEFCBng==",
+      "path": "prism.events/9.0.537",
+      "hashPath": "prism.events.9.0.537.nupkg.sha512"
+    },
+    "System.Composition/9.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sdLi+Sx8OFeuzA540dRrM/c7HKboLG+F6b51K46o0FLfP45dyueR4Y9/2uLfRfekUNg6cbE6lP0roVXiRjCkCw==",
+      "path": "system.composition/9.0.9",
+      "hashPath": "system.composition.9.0.9.nupkg.sha512"
+    },
+    "System.Composition.AttributedModel/9.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DvCpPyxJUXvfXuYmAHMKXC0+0j7ILBn2C7ilOki21WPek/gGJMuvR0qMUOsBrkbmu3nmCVRCSq8y/UUrdyeglg==",
+      "path": "system.composition.attributedmodel/9.0.9",
+      "hashPath": "system.composition.attributedmodel.9.0.9.nupkg.sha512"
+    },
+    "System.Composition.Convention/9.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qv/XstAr7jHSJic1+3xMlwFZhbC1fSqc0Vk0aZrDRj+ZNnF9pgXNGsNL0Aik9f/CP6HT4NlQUfbBEsSErV3eWw==",
+      "path": "system.composition.convention/9.0.9",
+      "hashPath": "system.composition.convention.9.0.9.nupkg.sha512"
+    },
+    "System.Composition.Hosting/9.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2TOK2+xk2KI/BqshfeVbR1bs+d9GZVKfda7UDoak5ecN/UmE1S0UQx56hbpLdZ+6O9rpw9OIt79OJFS0003kuQ==",
+      "path": "system.composition.hosting/9.0.9",
+      "hashPath": "system.composition.hosting.9.0.9.nupkg.sha512"
+    },
+    "System.Composition.Runtime/9.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-T0rtYWZ7xslbwYwc+DUcjWzt5zB/oV2Xb9587zaphg1rU+D62uPfwdJdqXcV3ALQ48bG263Ou5mBTJieyyeYFg==",
+      "path": "system.composition.runtime/9.0.9",
+      "hashPath": "system.composition.runtime.9.0.9.nupkg.sha512"
+    },
+    "System.Composition.TypedParts/9.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+6LhRZY+44Zq7ABeyC4+9nPJehJjgfdEcn5oeC/Kt6hh+Z7zmMKqg7AHWALRrpfUfkkWjjJo6YD/xbZ4txq2jg==",
+      "path": "system.composition.typedparts/9.0.9",
+      "hashPath": "system.composition.typedparts.9.0.9.nupkg.sha512"
+    },
+    "Lab04.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

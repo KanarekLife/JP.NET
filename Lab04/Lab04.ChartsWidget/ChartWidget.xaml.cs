@@ -57,40 +57,9 @@ public partial class ChartWidget : UserControl
         ChartCanvas.Width = totalWidth;
         ChartCanvas.Height = ChartCanvas.ActualHeight > 0 ? ChartCanvas.ActualHeight : 300;
 
-        var axes = new[]
-        {
-            new Line 
-            {
-                X1 = margin,
-                Y1 = ChartCanvas.Height - margin,
-                X2 = totalWidth - margin,
-                Y2 = ChartCanvas.Height - margin,
-                Stroke = Brushes.Black,
-                StrokeThickness = 2
-            },
-            new Line
-            {
-                X1 = margin,
-                Y1 = margin,
-                X2 = margin,
-                Y2 = ChartCanvas.Height - margin,
-                Stroke = Brushes.Black,
-                StrokeThickness = 2
-            }
-        };
-
-        foreach(var axis in axes)
-        {
-            ChartCanvas.Children.Add(axis);
-        }
-
         var colors = new[] 
         {
-            Brushes.CornflowerBlue,
-            Brushes.Coral,
-            Brushes.MediumSeaGreen,
-            Brushes.Orchid,
-            Brushes.Gold,
+            Brushes.CornflowerBlue
         };
 
         for (var i = 0; i < values.Length; i++)
@@ -103,9 +72,7 @@ public partial class ChartWidget : UserControl
             {
                 Width = barWidth,
                 Height = barHeight,
-                Fill = colors[i % colors.Length],
-                Stroke = Brushes.Black,
-                StrokeThickness = 1,
+                Fill = colors[i % colors.Length]
             };
             Canvas.SetLeft(rectangle, x);
             Canvas.SetTop(rectangle, y);

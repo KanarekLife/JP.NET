@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Prism.Events" Version="9.0.537" />
+      <PackageReference Include="System.Composition.TypedParts" Version="9.0.9" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lab04.Contracts\Lab04.Contracts.csproj" />
+        <Content Include="..\Widgets\**">
+            <Link>Widgets\%(RecursiveDir)%(Filename)%(Extension)</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+</Project>

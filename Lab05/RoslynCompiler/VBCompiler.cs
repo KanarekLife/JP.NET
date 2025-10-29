@@ -16,7 +16,6 @@ public class VBCompiler
 
         try
         {
-            // Always compile as DLL - no Sub Main required
             if (outputKind == OutputKind.ConsoleApplication || 
                 outputKind == OutputKind.WindowsApplication ||
                 outputKind == OutputKind.WindowsRuntimeApplication)
@@ -25,8 +24,7 @@ public class VBCompiler
             }
 
             var syntaxTree = VisualBasicSyntaxTree.ParseText(code);
-
-            // Check for syntax errors
+            
             var diagnostics = syntaxTree.GetDiagnostics();
             if (diagnostics.Any(d => d.Severity == DiagnosticSeverity.Error))
             {

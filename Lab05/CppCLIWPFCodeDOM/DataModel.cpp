@@ -35,8 +35,6 @@ void DataModel::NavigateToAddCodeCommand::Execute(System::Object^ parameter)
     _viewModel->FieldsList->Clear();
     
     try {
-        // U?ycie klasy C# do kompilacji
-        // SelectedOutputKind jest int, przekonwertuj na Microsoft.CodeAnalysis.OutputKind
         auto compilationResult = VBCompiler::CompileVBCode(
             _viewModel->CodeText, 
             (Microsoft::CodeAnalysis::OutputKind)_viewModel->SelectedOutputKind
@@ -44,7 +42,6 @@ void DataModel::NavigateToAddCodeCommand::Execute(System::Object^ parameter)
         
         if (!compilationResult->Success)
         {
-            // Wy?wietlenie b??d�w kompilacji
             for each (String^ error in compilationResult->Errors)
             {
                 _viewModel->ErrorsList->Add(error);
@@ -52,53 +49,32 @@ void DataModel::NavigateToAddCodeCommand::Execute(System::Object^ parameter)
         }
         else
         {
-            // Kompilacja powiod?a si? - za?aduj assembly
             auto assembly = Assembly::Load(compilationResult->AssemblyBytes);
-            
-            _viewModel->ErrorsList->Add("Assembly loaded: " + assembly->FullName);
-            
-            // Pobranie wszystkich typ�w (w??cznie z prywatnymi)
+
             auto allTypes = assembly->GetTypes();
-            _viewModel->ErrorsList->Add("Total types found: " + allTypes->Length.ToString());
             
-            // Debug - wy?wietl wszystkie typy
-            for each (System::Type^ t in allTypes)
-            {
-                _viewModel->ErrorsList->Add("Type: " + t->FullName + " (IsPublic: " + t->IsPublic.ToString() + ")");
-            }
             
-            // Pobranie pierwszego typu publicznego
             auto types = assembly->GetExportedTypes();
-            _viewModel->ErrorsList->Add("Exported types: " + types->Length.ToString());
             
             if (types->Length > 0 || allTypes->Length > 0)
             {
-                // U?yj pierwszego dost?pnego typu
                 _viewModel->Type = (types->Length > 0) ? types[0] : allTypes[0];
                 
-                _viewModel->ErrorsList->Add("Selected type: " + _viewModel->Type->FullName);
-                
-                // Utworzenie instancji klasy
                 _viewModel->ObjectInstance = Activator::CreateInstance(_viewModel->Type);
                 
-                // Pobranie metod (bez metod odziedziczonych z Object)
                 auto allMethods = _viewModel->Type->GetMethods(
                     BindingFlags::Public | BindingFlags::Instance | BindingFlags::DeclaredOnly
                 );
                 _viewModel->Methods = allMethods;
                 
-                // Pobranie p�l
                 auto allFields = _viewModel->Type->GetFields(
                     BindingFlags::Public | BindingFlags::Instance
                 );
                 _viewModel->Fields = allFields;
-                
-                _viewModel->ErrorsList->Add("Methods found: " + allMethods->Length.ToString());
-                _viewModel->ErrorsList->Add("Fields found: " + allFields->Length.ToString());
+                _viewModel->ErrorsList->Add("Done");
             }
             else
             {
-                _viewModel->ErrorsList->Add("No types found in compiled assembly");
             }
         }
     }
@@ -121,19 +97,6 @@ void DataModel::UpdateMethodsList()
         {
             StringBuilder^ sb = gcnew StringBuilder();
             sb->Append(method->Name);
-            sb->Append("(");
-            
-            auto params = method->GetParameters();
-            for (int i = 0; i < params->Length; i++)
-            {
-                if (i > 0) sb->Append(", ");
-                sb->Append(params[i]->ParameterType->Name);
-                sb->Append(" ");
-                sb->Append(params[i]->Name);
-            }
-            
-            sb->Append(") : ");
-            sb->Append(method->ReturnType->Name);
             
             MethodsList->Add(sb->ToString());
         }
@@ -147,7 +110,7 @@ void DataModel::UpdateFieldsList()
     {
         for each (FieldInfo^ field in fields)
         {
-            FieldsList->Add(field->Name + " : " + field->FieldType->Name);
+            FieldsList->Add(field->Name);
         }
     }
 }
@@ -158,7 +121,7 @@ void DataModel::UpdateFieldInfo()
     {
         for each (FieldInfo^ field in fields)
         {
-            String^ fieldStr = field->Name + " : " + field->FieldType->Name;
+            String^ fieldStr = field->Name;
             if (fieldStr == _selectedField)
             {
                 try {
@@ -200,19 +163,6 @@ void DataModel::InvokeMethodCommandClass::Execute(System::Object^ parameter)
         {
             StringBuilder^ sb = gcnew StringBuilder();
             sb->Append(method->Name);
-            sb->Append("(");
-            
-            auto params = method->GetParameters();
-            for (int i = 0; i < params->Length; i++)
-            {
-                if (i > 0) sb->Append(", ");
-                sb->Append(params[i]->ParameterType->Name);
-                sb->Append(" ");
-                sb->Append(params[i]->Name);
-            }
-            
-            sb->Append(") : ");
-            sb->Append(method->ReturnType->Name);
             
             if (sb->ToString() == _viewModel->SelectedMethod)
             {
@@ -270,7 +220,7 @@ void DataModel::SetFieldCommandClass::Execute(System::Object^ parameter)
     try {
         for each (FieldInfo^ field in _viewModel->fields)
         {
-            String^ fieldStr = field->Name + " : " + field->FieldType->Name;
+            String^ fieldStr = field->Name;
             if (fieldStr == _viewModel->SelectedField)
             {
                 Object^ value = nullptr;

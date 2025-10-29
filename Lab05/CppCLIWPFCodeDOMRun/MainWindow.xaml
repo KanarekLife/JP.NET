@@ -39,7 +39,9 @@
         Width="120"
         ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
         SelectedItem="{Binding SelectedOutputKind}"
+        Validation.ErrorTemplate="{x:Null}" 
       />
+
     </StackPanel>
     <TextBox
       Text="{Binding CodeText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"

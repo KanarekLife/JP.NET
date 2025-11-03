@@ -1,0 +1,79 @@
+[
+  {
+    "Id": "p1",
+    "Opis": {
+      "Imie": "Anna",
+      "Nazwisko": "Kowalska",
+      "DataUrodzenia": "1990-01-01T00:00:00",
+      "NrKartyBibliotecznej": "A123",
+      "Email": "anna@example.com",
+      "Kontakt": {
+        "Case": "PhoneOnly",
+        "Fields": [
+          "600111222"
+        ]
+      }
+    },
+    "KaucjaUSD": 50.0,
+    "DataDolaczenia": "2024-09-29T18:19:52.8858833Z",
+    "Status": {
+      "Case": "Standard"
+    },
+    "KaryPLN": 0.0
+  },
+  {
+    "Id": "p2",
+    "Opis": {
+      "Imie": "Jan",
+      "Nazwisko": "Nowak",
+      "DataUrodzenia": "1985-05-05T00:00:00",
+      "NrKartyBibliotecznej": "B234",
+      "Email": null,
+      "Kontakt": {
+        "Case": "AddressOnly",
+        "Fields": [
+          "Warszawa, ul. Prosta 1"
+        ]
+      }
+    },
+    "KaucjaUSD": 30.0,
+    "DataDolaczenia": "2025-10-04T18:19:52.8859936Z",
+    "Status": {
+      "Case": "Standard"
+    },
+    "KaryPLN": 10.0
+  },
+  {
+    "Id": "p3",
+    "Opis": null,
+    "KaucjaUSD": 20.0,
+    "DataDolaczenia": "2023-08-26T18:19:52.8860023Z",
+    "Status": {
+      "Case": "Premium"
+    },
+    "KaryPLN": 0.0
+  },
+  {
+    "Id": "p4",
+    "Opis": {
+      "Imie": "Ewa",
+      "Nazwisko": "Wi\u015Bniewska",
+      "DataUrodzenia": "1995-07-07T00:00:00",
+      "NrKartyBibliotecznej": "C345",
+      "Email": "ewa@example.com",
+      "Kontakt": {
+        "Case": "PhoneAndAddress",
+        "Fields": [
+          "600333444",
+          "Krak\u00F3w, Rynek 2"
+        ]
+      }
+    },
+    "KaucjaUSD": 100.0,
+    "DataDolaczenia": "2025-10-29T18:19:52.8860173Z",
+    "Status": {
+      "Case": "Standard"
+    },
+    "KaryPLN": 0.0
+  }
+]

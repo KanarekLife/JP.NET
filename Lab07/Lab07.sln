@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LibraryApp", "LibraryApp\LibraryApp.fsproj", "{BDC96D59-1CF9-4EE0-834C-48FF0AFEC5DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDC96D59-1CF9-4EE0-834C-48FF0AFEC5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC96D59-1CF9-4EE0-834C-48FF0AFEC5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC96D59-1CF9-4EE0-834C-48FF0AFEC5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC96D59-1CF9-4EE0-834C-48FF0AFEC5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

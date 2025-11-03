@@ -1,0 +1,13 @@
+{
+  "PatronId": "p1",
+  "Loans": [
+    {
+      "ISBN": "978-83-01",
+      "Returned": true
+    },
+    {
+      "ISBN": "978-83-02",
+      "Returned": false
+    }
+  ]
+}
